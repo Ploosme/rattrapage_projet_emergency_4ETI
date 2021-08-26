@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+
+<head>  
+  <!-- Mise en place du template css de leaflet-->  
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+
+  <!-- Mise en place du template JS de leaflet-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>#mapid { height: 750px; }</style>
+  <title>map></title>
+</head>
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+<body id="body">
+
+  <!--interface de création de véhicule------------------------------------------------------------------------------------------------------------------------------------------>
+  <form id="formAddTruck">
+    <select id="caserne" name="caserne">
+    </select>
+      <select id="typeVehicule" name="typeVehicule">
+        <option value="CAR" selected>Car</option>
+        <option value="TRUCK">Camion</option>
+        <option value="PUMPER_TRUCK">Pompes</option>
+        <option value="FIRE_ENGINE">Pompier</option>
+        <option value="WATER_TENDER">Citerne</option>
+        <option value="TURNTABLE_LADDER_TRUCK">Echelle</option>
+      </select>
+      <input type="button" value="Ajouter véhicule" onclick="submitAdd()">
+  </form>
+  <form id="formDeleteTruck">
+    <select id="caserne" name="caserne" onload="changeFunc()" onchange="changeFunc()">
+    </select>
+    <select id="vehicule" name="vehicule">
+    </select>
+    <input id="delete" type="button" value="Supprimer véhicule" onclick="submitDelete(); changeFunc()">
+  </form>
+  <form id="reserAllFires">
+    <input id="reset" type="button" value="Supprimer tous les feux" onclick="resetAllFire()">
+  </form>
+  <div id="printCreationFire">
+  </div>
+  <form id="creationFire">
+    <input id="fireCreationProbability" name="fireCreationProbability" type="number" step="0.01">
+    <input id="fireCreationSleep" name="fireCreationSleep" type="number" step="500">
+    <input id="configCreationFire" type="button" value="Mettre à jour la création des feux" onclick="changeCreationFire()">
+  </form>
+  <div id="printBehaviorFire">
+  </div>
+  <form id="behaviorFire">
+    <input id="probaReplication" name="probaReplication" type="number" step="0.01">
+    <input id="configBehaviorFire" type="button" value="Mettre à jour le comportement du feu" onclick="changeBehaviorFire()">
+  </form>
+  <div id="mapid"></div>
+
+
+
+</body>
+<script src="map.js"></script>

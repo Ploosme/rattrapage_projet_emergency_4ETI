@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+
+<head>  
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="caserneInterface.css"/>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body>
+ <h2 id="caserneInfo"></h2>
+ <h4 id="nbCamion"></h4>
+ <!-- Slideshow container -->
+ <div id ="slideshow-container" class="slideshow-container">
+      <div id="truckInfo" class="mySlides fade">
+          <div class="numbertext">Identifiant : {{id}}</div>
+          <div > Position :
+            <ul>
+              <li>Lon : {{lon}}</li>
+              <li>Lat : {{lat}}</li>
+            </ul>
+          </div>
+          <div>Type : {{type}}</div>
+          <div>Efficacité : {{efficiency}}</div>
+          <div>Type du liquide: {{liquidType}}</div>
+          <div>Quantité de liquide : {{liquidQuantity}}</div>
+          <div>Conso de liquide :{{liquidConsumption}}</div>
+          <div>Essence : {{fuel}}</div>
+          <div>Conso d'essence : {{fuelConsumption}}</div>
+          <div>Nombre de personnes : {{crewMember}}</div>
+          <div>Nombre de personnes max : {{crewMemberCapacity}}</div>
+      </div>
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+  
+  <br>
+  <script src="caserneInterface.js"></script>
+</body>
