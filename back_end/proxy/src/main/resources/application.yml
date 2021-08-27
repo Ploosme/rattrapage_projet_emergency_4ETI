@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+zuul:
+  prefix: /access
+  routes:
+   sim:
+      path: /sim/**
+      url: http://localhost:8081/
+   mgn:
+      path: /mgn/**
+      url: http://localhost:8082/
+
+
+endpoints:
+  trace:
+    sensitive: false
+
+ribbon:
+  eureka:
+    enabled: false
+    
